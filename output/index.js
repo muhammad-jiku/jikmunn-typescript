@@ -57,3 +57,11 @@ console.log(response1);
 console.log(response2);
 console.log(response3);
 console.log(response4);
+// tuple
+const arr = [false, "xD", { name: "dim" }];
+console.log(arr);
+arr[1] = 3;
+console.log(arr);
+// array.push() method is also aplicable in tuple but should not be used if not necessary
+arr.push(1);
+console.log(arr);
