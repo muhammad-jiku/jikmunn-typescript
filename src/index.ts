@@ -24,28 +24,55 @@ console.log(user1);
 
 // interface in generics
 
+// enum added
+enum RType {
+  SUCCESS,
+  FAILED,
+  UNAUTHORIZED,
+  FORBIDDEN,
+}
 interface APIResponse<T> {
   status: number;
-  type: string;
+  type: RType;
   data: T;
 }
 
 const response1: APIResponse<object> = {
   status: 200,
-  type: "awake",
+  type: RType.SUCCESS,
   data: {
     success: true,
   },
 };
 
 const response2: APIResponse<object> = {
-  status: 404,
-  type: "sleep",
+  status: 401,
+  type: RType.UNAUTHORIZED,
   //   data: {
   //     success: false,
   //   },
-  data: "false",
+  data: "ACCESS DENIED",
+};
+
+const response3: APIResponse<object> = {
+  status: 404,
+  type: RType.FAILED,
+  //   data: {
+  //     success: false,
+  //   },
+  data: "Failed to connect",
+};
+
+const response4: APIResponse<object> = {
+  status: 403,
+  type: RType.FORBIDDEN,
+  //   data: {
+  //     success: false,
+  //   },
+  data: "Forbidden connection",
 };
 
 console.log(response1);
 console.log(response2);
+console.log(response3);
+console.log(response4);
