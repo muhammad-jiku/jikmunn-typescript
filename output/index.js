@@ -1,4 +1,5 @@
 "use strict";
+// function types added
 let myFunc;
 myFunc = () => {
     console.log("first");
@@ -29,3 +30,13 @@ const add = (a, b, c = "JIKUM") => {
     return d;
 };
 add(364, 164);
+const userDetails = (id, user) => {
+    console.log(`User id is ${id}, name is ${user === null || user === void 0 ? void 0 : user.name} and age is ${user === null || user === void 0 ? void 0 : user.age}`);
+};
+const sayHello = (user) => {
+    console.log(`Hello ${(user === null || user === void 0 ? void 0 : user.age) > 50 ? "Sir" : "Mr."} ${user === null || user === void 0 ? void 0 : user.name}`);
+};
+userDetails(193242, { name: "jiku", age: 23 });
+sayHello({ name: "jikum", age: 53 });
+sayHello({ name: "jikmunn", age: 23 });
+// type aliases closed
